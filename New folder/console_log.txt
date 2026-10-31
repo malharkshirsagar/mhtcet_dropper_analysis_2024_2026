@@ -1,0 +1,152 @@
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_New folder/stage2.py"
+[*] Reading 'all_years_demographics_master.csv'...
+[*] Splitting candidate full names into Surname, Candidate Name, and Father/Mother Name...
+[SUCCESS] Processed file saved successfully as 'all_years_demographics_split.csv'
+    - Total records processed: 612,957
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_New folder/stage1.py"
+==================================================
+   MULTI-YEAR DEMOGRAPHICS UNIFICATION PIPELINE   
+==================================================
+[*] Processing 2024 from D:/MHTCET_DROPPER_PROJECT/New folder/2024.csv...
+    - Extracted 179,630 records for 2024
+[*] Processing 2025 from D:/MHTCET_DROPPER_PROJECT/New folder/2025.csv...
+    - Extracted 203,765 records for 2025
+[*] Processing 2026 from D:/MHTCET_DROPPER_PROJECT/New folder/2026.csv...
+    - Extracted 229,562 records for 2026
+  File "d:\MHTCET_DROPPER_PROJECT\New folder\stage1.py", line 63, in <module>
+    master_df.to_csv(output_filename, index=False)
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\util\_decorators.py", line 333, 
+    return func(*args, **kwargs)
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\generic.py", line 3989, in 
+    return DataFrameRenderer(formatter).to_csv(
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\formats\format.py", line 1014
+    csv_formatter.save()
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\formats\csvs.py", line 251, i
+    with get_handle(
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\common.py", line 873, in get_
+    handle = open(
+PermissionError: [Errno 13] Permission denied: 'all_years_demographics_master.csv'
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_
+==================================================
+   MULTI-YEAR DEMOGRAPHICS UNIFICATION PIPELINE   
+==================================================
+[*] Processing 2024 from D:/MHTCET_DROPPER_PROJECT/New folder/2024.csv...
+    - Extracted 179,630 records for 2024
+    - Extracted 203,765 records for 2025
+[*] Processing 2026 from D:/MHTCET_DROPPER_PROJECT/New folder/2026.csv...
+    - Extracted 229,562 records for 2026
+
+[SUCCESS] Master dataset compiled successfully!
+    - Total records across all years: 612,957
+    - Saved to: 'all_years_demographics_master.csv'New folder/stage2.py"
+[*] Reading 'all_years_demographics_master.csv'...
+[*] Splitting candidate full names into Surname, Candidate Name, and Father/Mother Name...
+[SUCCESS] Processed file saved successfully as 'all_years_demographics_split.csv'
+    - Total records processed: 612,957New folder/stage2.py"
+Traceback (most recent call last):
+  File "d:\MHTCET_DROPPER_PROJECT\New folder\stage2.py", line 88, in <module>
+    process_demographics()
+  File "d:\MHTCET_DROPPER_PROJECT\New folder\stage2.py", line 34, in process_demographics
+    raise FileNotFoundError(
+FileNotFoundError: [!] 'all_years_demographics_master.csv' not found in the current directory.New folder/stage2.py"
+[*] Reading 'stage1.csv'...
+[*] Splitting candidate full names into Surname, Candidate Name, and Father/Mother Name...
+[SUCCESS] Processed file saved successfully as 'stage2.csv'
+    - Total records processed: 612,957
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage3.py"
+Traceback (most recent call last):
+    direct_attach_ssc()
+  File "d:\MHTCET_DROPPER_PROJECT\New folder\stage3.py", line 10, in direct_attach_ssc
+    raise FileNotFoundError(
+FileNotFoundError: [!] 'all_years_demographics_split.csv' not found. Run your stage 2 split script first.
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage3.py"
+[*] Loading 'stage2.csv'...
+Traceback (most recent call last):
+  File "d:\MHTCET_DROPPER_PROJECT\New folder\stage3.py", line 112, in <module>
+    direct_attach_ssc()
+  File "d:\MHTCET_DROPPER_PROJECT\New folder\stage3.py", line 29, in direct_attach_ssc
+    raise FileNotFoundError(
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage3.py"
+[*] Loading 'stage2.csv'...
+[*] Reading SSC columns from 2024.csv (2024)...
+[*] Reading SSC columns from 2025.csv (2025)...
+[*] Reading SSC columns from 2026.csv (2026)...
+[*] Concatenating SSC columns sequentially to match master rows...
+
+[SUCCESS] Successfully attached SSC columns directly!
+    - Saved to: 'stage3.csv'
+    - Total records: 612,957
+    - Final columns: ['exam year', 'candidate full name', 'surname', 'candidate name', 'father/mother name', 'category', 'gender', 'SSC Total %', 'SSC Math %', 'SSC Science %', 'SSC English %']
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage4.py"
+[*] Loading 'stage3.csv'...
+Traceback (most recent call last):
+  File "d:\MHTCET_DROPPER_PROJECT\New folder\stage4.py", line 138, in <module>
+    attach_hsc_data()
+  File "d:\MHTCET_DROPPER_PROJECT\New folder\stage4.py", line 15, in attach_hsc_data
+    df_master = pd.read_csv(complete_file, dtype=str)
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 626
+    return parser.read(nrows)
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 838, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_
+[*] Loading 'stage3.csv'...
+[*] Reading HSC columns from 2025.csv (2025)...
+[*] Concatenating HSC columns sequentially to match master rows...
+[SUCCESS] Attached HSC columns successfully! Saved to 'stage4.csv'
+    - Final columns: ['exam year', 'candidate full name', 'surname', 'candidate name', 'father/mother name', 'category', 'gender', 'SSC Total %', 'SSC Math %', 'SSC Science %', 'SSC English %', 'HSC PCM %', 'HSC Math %', 'HSC Physics %', 'HSC / Diploma / D.Voc. Total %']
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage5.py"
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage5.py"DROPPER_PROJECT/New folder/stage5.py"
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage5.py"
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage5.py"
+[*] Loading base academic/demographic master...
+[*] Indexing 2024 raw data for matching...
+[*] Indexing 2026 raw data for matching...
+
+[SUCCESS] Custom Row Matching Complete!
+    - Saved exact requested format to 'matched_dropper_percentiles.csv'
+^C D:\MHTCET_DROPPER_PROJECT\New folder> 
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage6.py"
+[*] Loading dataset...
+
+[SUCCESS] Single-attempt candidates purged!
+    - Total records scanned: 612,957
+    - Normal students deleted: 583,432
+    - True Droppers retained: 29,525
+    - Saved to: 'verified_droppers_only.csv'
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage7.py"
+Dropped 988 empty-name rows.
+Traceback (most recent call last):
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+    self.handles = get_handle(
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'verified_droppers.csv'
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage7.py"
+Dropped 844 empty-name rows.
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage8.py"
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage8.py"
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage8.py"
+[INFO] Loading dataset from matched_droppers_percentile_cleaned.csv...
+[ERROR] Could not find matched_droppers_percentile_cleaned.csv. Make sure the file is in your working directory.
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage8.py"
+[INFO] Loading dataset from matched_dropper_percentiles_cleaned.csv...
+[ERROR] Could not find matched_dropper_percentiles_cleaned.csv. Make sure the file is in your working directory.
+PS D:\MHTCET_DROPPER_PROJECT\New folder> & C:\Users\OWNER\AppData\Local\Programs\Python\Python310\python.exe "d:/MHTCET_DROPPER_PROJECT/New folder/stage8.py"
+[INFO] Loading dataset from matched_dropper_percentiles_clean.csv...
+[INFO] Initial rows loaded: 28681
+[INFO] Scanning columns for dynamic performance metrics...
+[SUCCESS] Verification complete:
+ -> Clean Verified Records: 28681
+ -> Flagged Data Anomalies: 0
+[EXPORT] Saved verified dataset to droppers_final_verified_analysis.csv
+PS D:\MHTCET_DROPPER_PROJECT\New folder> 

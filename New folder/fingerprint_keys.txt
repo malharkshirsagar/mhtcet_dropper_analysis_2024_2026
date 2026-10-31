@@ -1,0 +1,38 @@
+100% static columns=[
+SSC Total %,
+SSC Math %,
+SSC Science %,
+SSC English %,
+category,
+gender,
+]
+
+
+probable static column(may /maybe not be changed)=[
+HSC PCM %,
+HSC Math %,
+HSC Physics %,
+HSC / Diploma / D.Voc. Total %,
+
+
+
+]
+
+
+
+guranteed dynamic columns(100% risk of changing)=[Merit NO, 
+application ID,
+Percentile/Mark,
+MHT-CET-PCM MathPercentile,
+MHT-CET-PCM Physics Percentile,
+MHT-CET-PCM Chemistry Percentile,
+
+
+]
+
+
+dynamic columns=[Candidate's Full Name(but if divided into smaller parts and rearrange them then it becomes static)
+Full name=Surname+student_name+father_name
+
+
+]
